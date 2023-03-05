@@ -1,12 +1,10 @@
 import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Meta from "@/components/Meta";
 
 export default function Home() {
-  const theme = useTheme();
   const router = useRouter();
 
   return (
@@ -23,15 +21,11 @@ export default function Home() {
         sx={{
           background: "linear-gradient(to right bottom, #26bd8d, #82ffa1)",
         }}
+        display={"flex"}
       >
-        <Typography
-          variant={"h4"}
-          align={"center"}
-          paddingTop={"20px"}
-          color={theme.palette.secondary.main}
-        >
-          GreenScan
-        </Typography>
+        <Box m="auto">
+          <Image width={320} height={7} src={"/logoDark.png"} alt={"Logo"} />
+        </Box>
       </Box>
 
       <Box borderRadius={4}>

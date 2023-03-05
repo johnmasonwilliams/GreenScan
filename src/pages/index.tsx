@@ -3,13 +3,21 @@ import { useTheme } from "@mui/material/styles";
 import { Button, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Meta from "@/components/Meta";
 
 export default function Home() {
   const theme = useTheme();
   const router = useRouter();
 
   return (
-    <Box>
+    <>
+      <Meta
+        title={
+          "GreenScan - Sustainable Product Identifier App | Check if a Product is Eco-Friendly"
+        }
+        description={`GreenScan is the ultimate app to help you make environmentally conscious decisions while shopping. Simply scan a product's barcode, and GreenScan will instantly tell you if it is sustainable or not. Our app analyzes the product's ingredients, packaging, and manufacturing process to give you a clear understanding of its environmental impact. Download GreenScan today and start making informed choices for a more sustainable future!`}
+      />
+
       <Box
         height={"80px"}
         sx={{
@@ -66,6 +74,6 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 }

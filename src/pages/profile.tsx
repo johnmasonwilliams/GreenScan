@@ -1,35 +1,20 @@
 import Box from "@mui/material/Box";
-import { Avatar, Divider, Grid, Typography } from "@mui/material";
+import { Avatar, Divider, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ListItem from "@/components/ListItem";
-
-const dummyInfo = [
-  {
-    text: "Local",
-    isTrue: true,
-  },
-  {
-    text: "Organic",
-    isTrue: false,
-  },
-  {
-    text: "Cage-free",
-    isTrue: false,
-  },
-  {
-    text: "Hormone-free",
-    isTrue: true,
-  },
-  {
-    text: "Antibiotic-free",
-    isTrue: true,
-  },
-];
+import Meta from "@/components/Meta";
+import ProfileTabs from "@/components/ProfileTabs";
 
 const ProfilePage = () => {
   const theme = useTheme();
   return (
     <>
+      <Meta
+        title={
+          "GreenScan - Sustainable Product Identifier App | Check if a Product is Eco-Friendly"
+        }
+        description={`GreenScan is the ultimate app to help you make environmentally conscious decisions while shopping. Simply scan a product's barcode, and GreenScan will instantly tell you if it is sustainable or not. Our app analyzes the product's ingredients, packaging, and manufacturing process to give you a clear understanding of its environmental impact. Download GreenScan today and start making informed choices for a more sustainable future!`}
+      />
+
       <Box
         display="flex"
         height={"175px"}
@@ -39,8 +24,9 @@ const ProfilePage = () => {
       >
         <Box m="auto">
           <Avatar
-            src={"/steak.png"}
+            src={"/profileLogo.png"}
             sx={{
+              paddingY: 3,
               top: 50,
               width: 175,
               height: 175,
@@ -61,17 +47,7 @@ const ProfilePage = () => {
 
       <Divider sx={{ marginY: 2 }} />
 
-      <Typography></Typography>
-
-      <Box width={"100%"}>
-        <Grid>
-          {dummyInfo.map((item) => (
-            <Grid item key={item.text}>
-              <ListItem text={item.text} isTrue={item.isTrue} />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      <ProfileTabs />
     </>
   );
 };

@@ -10,7 +10,7 @@ const BottomNavBar = () => {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box>
+    <Box sx={{ height: 80 }}>
       <BottomNavigation
         showLabels
         value={value}
@@ -19,8 +19,8 @@ const BottomNavBar = () => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction value={"/"} icon={<CameraAltIcon />} />
         <BottomNavigationAction value={"/profile"} icon={<FoodBankIcon />} />
+        <BottomNavigationAction value={"/"} icon={<CameraAltIcon />} />
         <BottomNavigationAction value={"/help"} icon={<HelpIcon />} />
       </BottomNavigation>
     </Box>

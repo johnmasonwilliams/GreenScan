@@ -1,28 +1,21 @@
 import Box from "@mui/material/Box";
-import { Avatar, Container, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Avatar, Typography } from "@mui/material";
 
 const ProfilePage = () => {
-  const theme = useTheme();
-
   return (
     <>
-      <Box height={"245px"} bgcolor={theme.palette.primary.main}>
-        <Typography
-          variant={"h4"}
-          align={"center"}
-          paddingTop={"60px"}
-          color={theme.palette.secondary.main}
-        >
-          Profile
-        </Typography>
-      </Box>
-
-      <Box display="flex">
+      <Box
+        display="flex"
+        height={"175px"}
+        sx={{
+          background: "linear-gradient(to right bottom, #430089, #82ffa1)",
+        }}
+      >
         <Box m="auto">
           <Avatar
             src={"/steak.png"}
             sx={{
+              top: 50,
               width: 175,
               height: 175,
               backgroundColor: "black",
@@ -31,14 +24,14 @@ const ProfilePage = () => {
         </Box>
       </Box>
 
-      <Container>
-        <Typography variant={"h4"} align={"center"} paddingTop={6}>
+      <Box sx={{ marginTop: 7 }}>
+        <Typography variant={"h4"} align={"center"}>
           Old Neighborhood
         </Typography>
         <Typography align={"center"}>
           A family tradition for over 100 years
         </Typography>
-      </Container>
+      </Box>
     </>
   );
 };

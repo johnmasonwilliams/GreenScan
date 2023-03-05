@@ -9,7 +9,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Box minHeight={"calc(100vh - 60px)"}>{children}</Box>
+      <Box minHeight={"calc(100vh - 80px)"}>{children}</Box>
 
       <Divider />
 

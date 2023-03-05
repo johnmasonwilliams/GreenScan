@@ -8,11 +8,11 @@ export default function Home() {
 
   return (
     <Box>
-      <Box height={"127px"} bgcolor={theme.palette.primary.main}>
+      <Box height={"80px"} bgcolor={theme.palette.primary.main}>
         <Typography
           variant={"h4"}
           align={"center"}
-          paddingTop={"60px"}
+          paddingTop={"20px"}
           color={theme.palette.secondary.main}
         >
           GreenScan

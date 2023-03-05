@@ -1,25 +1,25 @@
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { Divider, Typography } from "@mui/material";
+import { Button, Divider, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-const ListItem = (props: { text: string; isTrue: boolean }) => {
-  const { text, isTrue } = props;
+const ListItem = (props: { text: string; anchor: string; isTrue: boolean }) => {
+  const { text, anchor, isTrue } = props;
   const theme = useTheme();
 
   return (
     <>
-      <Typography
+      <Button
         sx={{
           display: "flex",
           alignItems: "center",
-          marginX: 10,
-          maxWidth: "100%",
+          marginX: 5,
+          mainWidth: "100%",
           justifyContent: "space-between",
         }}
-        variant={"h5"}
+        href={`/help#${anchor}`}
       >
-        {text}
+        <Typography variant={"h5"}>{text}</Typography>
         {isTrue ? (
           <CheckCircleIcon
             sx={{
@@ -37,7 +37,8 @@ const ListItem = (props: { text: string; isTrue: boolean }) => {
             }}
           />
         )}
-      </Typography>
+      </Button>
+
       <Divider />
     </>
   );

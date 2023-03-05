@@ -6,53 +6,65 @@ import ListItem from "@/components/ListItem";
 const dummyFoodGradeInfo = [
   {
     text: "Hormone Free",
+    anchor: "hormone-free",
     isTrue: true,
   },
   {
     text: "Cage Free",
-    isTrue: false,
+    anchor: "cage-free",
+    isTrue: true,
   },
   {
     text: "Antibiotic Free",
+    anchor: "antibiotic-free",
     isTrue: true,
   },
   {
     text: "Pesticide Free",
+    anchor: "pesticide-free",
     isTrue: false,
   },
   {
     text: "Organic",
+    anchor: "organic",
     isTrue: true,
   },
   {
     text: "Local",
-    isTrue: false,
+    anchor: "local",
+    isTrue: true,
   },
 ];
 
 const dummySustainabilityInfo = [
   {
     text: "Renewable Energy",
+    anchor: `renewable-energy-sources`,
     isTrue: true,
   },
   {
     text: "Energy Efficient",
-    isTrue: false,
+    anchor: `energy-efficiency`,
+    isTrue: true,
   },
   {
     text: "Water Resilient",
+    anchor: `water-resiliency`,
     isTrue: false,
   },
   {
     text: "Emission Reduction",
+    anchor: `emissions`,
     isTrue: true,
   },
   {
     text: "Recycling Efforts",
-    isTrue: true,
+    anchor: `recycling`,
+    isTrue: false,
   },
   {
     text: "Waste Reduction",
+    anchor: `waste-reduction`,
     isTrue: false,
   },
 ];
@@ -80,7 +92,11 @@ export default function ProfileTabs() {
         <Grid padding={0}>
           {dummyFoodGradeInfo.map((item) => (
             <Grid item key={item.text}>
-              <ListItem text={item.text} isTrue={item.isTrue} />
+              <ListItem
+                text={item.text}
+                anchor={item.anchor}
+                isTrue={item.isTrue}
+              />
             </Grid>
           ))}
         </Grid>
@@ -90,7 +106,11 @@ export default function ProfileTabs() {
         <Grid>
           {dummySustainabilityInfo.map((item) => (
             <Grid item key={item.text}>
-              <ListItem text={item.text} isTrue={item.isTrue} />
+              <ListItem
+                text={item.text}
+                anchor={item.anchor}
+                isTrue={item.isTrue}
+              />
             </Grid>
           ))}
         </Grid>

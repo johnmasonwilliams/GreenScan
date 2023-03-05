@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
 import HelpIcon from "@mui/icons-material/Help";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
@@ -7,7 +8,11 @@ import { useRouter } from "next/router";
 
 const BottomNavBar = () => {
   const router = useRouter();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(router.asPath);
+
+  useEffect(() => {
+    setValue(router.asPath);
+  }, [router, router.asPath]);
 
   return (
     <Box sx={{ height: 80 }}>

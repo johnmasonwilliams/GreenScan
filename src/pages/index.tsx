@@ -2,13 +2,20 @@ import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import { Button, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const theme = useTheme();
+  const router = useRouter();
 
   return (
     <Box>
-      <Box height={"80px"} bgcolor={theme.palette.primary.main}>
+      <Box
+        height={"80px"}
+        sx={{
+          background: "linear-gradient(to right bottom, #26bd8d, #82ffa1)",
+        }}
+      >
         <Typography
           variant={"h4"}
           align={"center"}
@@ -19,41 +26,44 @@ export default function Home() {
         </Typography>
       </Box>
 
-      <Box marginTop={"50px"} display="flex">
-        <Box height={"400px"} m="auto" bgcolor={"lightgrey"} borderRadius={4}>
-          <Image
-            style={{ marginTop: 75 }}
-            width={300}
-            height={300}
-            src={"/steak.png"}
-            alt={"Steak"}
-          />
+      <Box borderRadius={4}>
+        <Box marginTop={"50px"} display="flex">
+          <Box height={"400px"} m="auto" bgcolor={"lightgrey"} borderRadius={4}>
+            <Image
+              style={{ marginTop: 75 }}
+              width={300}
+              height={300}
+              src={"/steak.png"}
+              alt={"Steak"}
+            />
+          </Box>
         </Box>
-      </Box>
 
-      <Box marginTop={"20px"} display="flex">
-        <Box m="auto">
-          <Stack>
-            <Button
-              variant={"outlined"}
-              sx={{
-                width: 74,
-                height: 74,
-                borderRadius: 10,
-              }}
-              disabled={true}
-            />
-            <Button
-              variant={"outlined"}
-              sx={{
-                top: -70,
-                left: 4,
-                width: 66,
-                height: 66,
-                borderRadius: 10,
-              }}
-            />
-          </Stack>
+        <Box marginTop={"50px"} display="flex">
+          <Box m="auto">
+            <Stack>
+              <Button
+                variant={"outlined"}
+                sx={{
+                  width: 74,
+                  height: 74,
+                  borderRadius: 10,
+                }}
+                disabled={true}
+              />
+              <Button
+                variant={"outlined"}
+                onClick={async () => await router.push("/profile")}
+                sx={{
+                  top: -70,
+                  left: 4,
+                  width: 66,
+                  height: 66,
+                  borderRadius: 10,
+                }}
+              />
+            </Stack>
+          </Box>
         </Box>
       </Box>
     </Box>

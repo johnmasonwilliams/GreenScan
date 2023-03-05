@@ -9,7 +9,7 @@ const App: AppType = ({ Component, pageProps, router }: AppProps) => {
     palette: {
       primary: { main: "#5DB075" },
       secondary: { main: "#FFF" },
-      background: { default: "#FFF" }, //change later
+      background: { default: "#FFF" },
     },
   });
 

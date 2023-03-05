@@ -2,51 +2,58 @@ import * as React from "react";
 import { Grid, Tab, Tabs } from "@mui/material";
 import TabPanel from "./TabPanel";
 import ListItem from "@/components/ListItem";
-import Box from "@mui/material/Box";
 
-const dummyUSDAInfo = [
+const dummyFoodGradeInfo = [
   {
-    text: "Local",
+    text: "Hormone Free",
     isTrue: true,
+  },
+  {
+    text: "Cage Free",
+    isTrue: false,
+  },
+  {
+    text: "Antibiotic Free",
+    isTrue: true,
+  },
+  {
+    text: "Pesticide Free",
+    isTrue: false,
   },
   {
     text: "Organic",
-    isTrue: false,
-  },
-  {
-    text: "Cage-free",
-    isTrue: false,
-  },
-  {
-    text: "Hormone-free",
     isTrue: true,
   },
   {
-    text: "Antibiotic-free",
-    isTrue: true,
+    text: "Local",
+    isTrue: false,
   },
 ];
 
 const dummySustainabilityInfo = [
   {
-    text: "Local",
+    text: "Renewable Energy",
     isTrue: true,
   },
   {
-    text: "Organic",
+    text: "Energy Efficient",
     isTrue: false,
   },
   {
-    text: "Cage-free",
+    text: "Water Resilient",
     isTrue: false,
   },
   {
-    text: "Hormone-free",
+    text: "Emission Reduction",
     isTrue: true,
   },
   {
-    text: "Antibiotic-free",
+    text: "Recycling Efforts",
     isTrue: true,
+  },
+  {
+    text: "Waste Reduction",
+    isTrue: false,
   },
 ];
 
@@ -63,34 +70,30 @@ export default function ProfileTabs() {
         variant={"fullWidth"}
         value={tabValue}
         onChange={handleChange}
-        aria-label="Auth tabs"
+        aria-label="Tabs"
       >
-        <Tab label="USDA Certifications" />
+        <Tab label="Food Grade" />
         <Tab label="Sustainability" />
       </Tabs>
 
       <TabPanel value={tabValue} index={0}>
-        <Box width={"100%"}>
-          <Grid>
-            {dummyUSDAInfo.map((item) => (
-              <Grid item key={item.text}>
-                <ListItem text={item.text} isTrue={item.isTrue} />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <Grid padding={0}>
+          {dummyFoodGradeInfo.map((item) => (
+            <Grid item key={item.text}>
+              <ListItem text={item.text} isTrue={item.isTrue} />
+            </Grid>
+          ))}
+        </Grid>
       </TabPanel>
 
       <TabPanel value={tabValue} index={1}>
-        <Box width={"100%"}>
-          <Grid>
-            {dummySustainabilityInfo.map((item) => (
-              <Grid item key={item.text}>
-                <ListItem text={item.text} isTrue={item.isTrue} />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <Grid>
+          {dummySustainabilityInfo.map((item) => (
+            <Grid item key={item.text}>
+              <ListItem text={item.text} isTrue={item.isTrue} />
+            </Grid>
+          ))}
+        </Grid>
       </TabPanel>
     </>
   );

@@ -3,7 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import LinkIcon from "@mui/icons-material/Link";
 import * as React from "react";
 
-const terms = [
+const foodGradeTerms = [
   {
     title: `Hormone Free`,
     anchor: `hormone-free`,
@@ -66,11 +66,121 @@ If not explicitly stated on the food packaging label, GreenScan looks through in
   },
 ];
 
+const sustainabilityTerms = [
+  {
+    title: `Renewable Energy Sources`,
+    anchor: `renewable-energy-sources`,
+    description: `Renewable energy is defined by the EPA as that which is sourced from sources such as “wind and solar power, geothermal, hydropower, and various forms of biomass.” 
+It is measured in terms of renewable energy certificates, which are directly equivalent to megawatt hours. Non-renewable energy is measured in terms of kilowatt hours; 1 mWh is equal to 1000 kWh.
+How do we measure renewable energy?
+GreenScan looks at the company's sustainability statements to identify their use of renewable energy, looking for mentions of ‘solar’, ‘hydro’, and ‘wind’ energy.`,
+  },
+  {
+    title: `Energy Efficiency`,
+    anchor: `energy-efficiency`,
+    description: `Energy efficiency is defined by the EPA as “products or systems using less energy to do the same or better job than conventional products or systems.” It is also referred to as ‘energy reduction’ and ‘energy optimization’. The national identification symbol of energy efficiency is ENERGY STAR®.
+How do we measure energy efficiency?
+GreenScan looks at the company’s sustainability statements to identify statements regarding their refrigeration systems, lighting and electricity usage, reuse of heat output, and HVAC systems.`,
+  },
+  {
+    title: `Water Resiliency`,
+    anchor: `water-resiliency`,
+    description: `Water resiliency, also referred to as water conservation, is defined by the EPA as “any beneficial reduction in water losses, waste, or use.” Water reduction is measured as companies off-putting as much water as they pull-in; this is equivalent to ‘net-zero emission’. A step above that is net positive, wherein companies off-put more water than they pull in. The most efficient design is water reuse, wherein companies filter and reuse their water runoff, thus reducing both their off-put and pull-in.
+How do we measure water resiliency?
+GreenScan looks at the company’s sustainability statements to identify statements regarding water conservation, water reduction, water efficiency, and water recycling and reuse.`,
+  },
+  {
+    title: `Emissions`,
+    anchor: `emissions`,
+    description: `Emissions are defined by the EPA as “pollution released or discharged into the air from natural or man-made sources”. Natural resources include fossil fuels, biomass, oil, and coal. Man-made resources include nuclear energy and diesel fuel.
+Emissions from these resources include dioxins such as carbon monoxide (CO), carbon dioxide (CO2), sulfur dioxide (SO2), and nitrogen oxides (NOx), as well as lethal chemicals such as methane (CH4), arsenic (As), and mercury (Hg).
+\tHow do we measure emissions reduction?
+GreenScan looks at the company’s sustainability statement to identify efforts to reduce emissions, such as using manure for fertilization and using alternative fuels/lower emitting vehicles for transportation, as well as statements regarding reducing carbon emissions and footprints.
+`,
+  },
+  {
+    title: `Recycling`,
+    anchor: `recycling`,
+    description: `Recycling is defined by the EPA as “the process of converting waste into a reusable material or return a material to a previous state in a cyclic process.” This includes materials from start to finish, including wooden pallets, batteries, glass, plastic, and office supplies.
+How do we measure recycling efforts?
+GreenScan looks at the company’s sustainability statement to identify mentions of ‘recycling’, ‘reusing’, ‘converting’, and using recycled materials.`,
+  },
+  {
+    title: `Waste Reduction`,
+    anchor: `waste-reduction`,
+    description: `Waste reduction is defined by the EPA as “using source reduction, recycling, or composting to prevent or reduce waste generation.” This includes reusing waste, runoff, and byproducts throughout the process.
+How do we measure waste reduction efforts?
+GreenScan looks at the company’s sustainability statement to identify statements regarding composting, donating, turning waste into energy, and turning waste into profit (i.e., selling byproducts).`,
+  },
+];
+
 const TermsList = () => {
   const theme = useTheme();
+
   return (
     <>
-      {terms.map((term) => (
+      <Box display={"flex"}>
+        <Box m={"auto"}>
+          <Button href={`/help#food-grade-terms`}>
+            <LinkIcon width={5} sx={{ color: theme.palette.primary.main }} />
+            <Typography
+              id={"food-grade-terms"}
+              fontWeight={"bold"}
+              variant={"h3"}
+              color={theme.palette.primary.main}
+              align={"center"}
+            >
+              Food Grade Terms
+            </Typography>
+          </Button>
+        </Box>
+      </Box>
+
+      {foodGradeTerms.map((term) => (
+        <React.Fragment key={term.anchor}>
+          <Box
+            sx={{
+              bgcolor: theme.palette.primary.main,
+              paddingY: 2,
+              marginBottom: 1,
+            }}
+            id={term.anchor}
+          >
+            <Button href={`/help#${term.anchor}`}>
+              <LinkIcon width={5} sx={{ color: "white" }} />
+              <Typography variant={"h5"} fontWeight={"bold"} color={"white"}>
+                {term.title}
+              </Typography>
+            </Button>
+          </Box>
+          <Typography sx={{ marginX: 4, marginY: 2 }}>
+            {term.description}
+          </Typography>
+
+          <Divider sx={{ marginTop: 3 }} />
+        </React.Fragment>
+      ))}
+
+      <Divider />
+
+      <Box display={"flex"}>
+        <Box m={"auto"}>
+          <Button href={`/help#sustainability-terms`}>
+            <LinkIcon width={5} sx={{ color: theme.palette.primary.main }} />
+            <Typography
+              id={"sustainability-terms"}
+              fontWeight={"bold"}
+              variant={"h3"}
+              color={theme.palette.primary.main}
+              align={"center"}
+            >
+              Sustainability Terms
+            </Typography>
+          </Button>
+        </Box>
+      </Box>
+
+      {sustainabilityTerms.map((term) => (
         <React.Fragment key={term.anchor}>
           <Box
             sx={{

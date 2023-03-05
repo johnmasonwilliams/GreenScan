@@ -53,8 +53,9 @@ export default function Home() {
                 }}
                 disabled={true}
               />
+
               <Button
-                variant={"outlined"}
+                variant={"contained"}
                 onClick={async () => await router.push("/profile")}
                 sx={{
                   top: -70,

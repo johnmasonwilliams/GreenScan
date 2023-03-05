@@ -1,11 +1,9 @@
 import Box from "@mui/material/Box";
 import { Avatar, Divider, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import Meta from "@/components/Meta";
 import ProfileTabs from "@/components/ProfileTabs";
 
 const ProfilePage = () => {
-  const theme = useTheme();
   return (
     <>
       <Meta

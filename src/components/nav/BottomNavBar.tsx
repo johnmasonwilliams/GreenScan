@@ -1,6 +1,11 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  Divider,
+} from "@mui/material";
 import HelpIcon from "@mui/icons-material/Help";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import FoodBankIcon from "@mui/icons-material/FoodBank";
@@ -15,7 +20,15 @@ const BottomNavBar = () => {
   }, [router, router.asPath]);
 
   return (
-    <Box sx={{ height: 80 }}>
+    <Box
+      sx={{
+        width: "100%",
+        position: "fixed",
+        bottom: 0,
+      }}
+    >
+      <Divider />
+
       <BottomNavigation
         showLabels
         value={value}

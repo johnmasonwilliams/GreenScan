@@ -26,6 +26,7 @@ const dummyUSDAInfo = [
     isTrue: true,
   },
 ];
+
 const dummySustainabilityInfo = [
   {
     text: "Local",
@@ -79,10 +80,11 @@ export default function ProfileTabs() {
           </Grid>
         </Box>
       </TabPanel>
+
       <TabPanel value={tabValue} index={1}>
         <Box width={"100%"}>
           <Grid>
-            {dummyUSDAInfo.map((item) => (
+            {dummySustainabilityInfo.map((item) => (
               <Grid item key={item.text}>
                 <ListItem text={item.text} isTrue={item.isTrue} />
               </Grid>

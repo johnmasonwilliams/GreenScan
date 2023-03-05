@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import BottomNavBar from "@/components/nav/BottomNavBar";
 
 type Props = {
@@ -9,9 +9,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Box minHeight={"calc(100vh - 80px)"}>{children}</Box>
-
-      <Divider />
+      <Box>{children}</Box>
 
       <BottomNavBar />
     </>

@@ -13,13 +13,14 @@ const ListItem = (props: { text: string; anchor: string; isTrue: boolean }) => {
         sx={{
           display: "flex",
           alignItems: "center",
-          marginX: 5,
+          marginX: 2,
           mainWidth: "100%",
           justifyContent: "space-between",
+          color: isTrue ? theme.palette.success.main : theme.palette.error.main,
         }}
         href={`/help#${anchor}`}
       >
-        <Typography variant={"h5"}>{text}</Typography>
+        <Typography variant={"h6"}>{text}</Typography>
         {isTrue ? (
           <CheckCircleIcon
             sx={{

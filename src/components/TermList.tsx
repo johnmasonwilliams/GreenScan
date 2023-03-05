@@ -126,7 +126,7 @@ const TermsList = () => {
             <Typography
               id={"food-grade-terms"}
               fontWeight={"bold"}
-              variant={"h3"}
+              variant={"h4"}
               color={theme.palette.primary.main}
               align={"center"}
             >
@@ -141,14 +141,14 @@ const TermsList = () => {
           <Box
             sx={{
               bgcolor: theme.palette.primary.main,
-              paddingY: 2,
+              paddingY: 1,
               marginBottom: 1,
             }}
             id={term.anchor}
           >
             <Button href={`/help#${term.anchor}`}>
               <LinkIcon width={5} sx={{ color: "white" }} />
-              <Typography variant={"h5"} fontWeight={"bold"} color={"white"}>
+              <Typography variant={"h6"} fontWeight={"bold"} color={"white"}>
                 {term.title}
               </Typography>
             </Button>
@@ -170,7 +170,7 @@ const TermsList = () => {
             <Typography
               id={"sustainability-terms"}
               fontWeight={"bold"}
-              variant={"h3"}
+              variant={"h4"}
               color={theme.palette.primary.main}
               align={"center"}
             >
@@ -185,14 +185,14 @@ const TermsList = () => {
           <Box
             sx={{
               bgcolor: theme.palette.primary.main,
-              paddingY: 2,
+              paddingY: 1,
               marginBottom: 1,
             }}
             id={term.anchor}
           >
             <Button href={`/help#${term.anchor}`}>
               <LinkIcon width={5} sx={{ color: "white" }} />
-              <Typography variant={"h5"} fontWeight={"bold"} color={"white"}>
+              <Typography variant={"h6"} fontWeight={"bold"} color={"white"}>
                 {term.title}
               </Typography>
             </Button>

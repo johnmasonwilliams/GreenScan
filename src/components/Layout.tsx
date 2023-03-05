@@ -9,7 +9,13 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Box>{children}</Box>
+      <Box
+        height={
+          'Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) + "px"'
+        }
+      >
+        {children}
+      </Box>
 
       <BottomNavBar />
     </>

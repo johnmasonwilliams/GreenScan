@@ -3,8 +3,9 @@ import { ThemeProvider } from "@mui/system";
 import { createTheme } from "@mui/material";
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
-const App: AppType = ({ Component, pageProps, router }: AppProps) => {
+const App: AppType = ({ Component, pageProps }: AppProps) => {
   const darkTheme = createTheme({
     palette: {
       primary: { main: "#5DB075" },
@@ -17,6 +18,7 @@ const App: AppType = ({ Component, pageProps, router }: AppProps) => {
     <ThemeProvider theme={darkTheme}>
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
     </ThemeProvider>
   );
